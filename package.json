@@ -1,0 +1,33 @@
+{
+  "name": "pretty-imperial",
+  "version": "1.0.0",
+  "description": "Parse, convert, and humanize imperial sizes",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stevelacy/pretty-imperial.git"
+  },
+  "keywords": [
+    "pretty",
+    "imperial",
+    "human",
+    "humanized",
+    "prettify",
+    "ft",
+    "inch",
+    "mile",
+    "yard"
+  ],
+  "author": "Steve Lacy <me@slacy.me> (http://slacy.me)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stevelacy/pretty-imperial/issues"
+  },
+  "homepage": "https://github.com/stevelacy/pretty-imperial#readme",
+  "devDependencies": {
+    "ava": "^0.17.0"
+  }
+}
