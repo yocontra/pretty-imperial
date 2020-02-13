@@ -29,4 +29,9 @@ test('input: humanize in', function (t) {
   t.is(pretty(6).input('in').humanize(), '6in')
 })
 
-console.log(pretty(1500).input('in').yd())
+test('input: humanize decimal in', function (t) {
+  t.is(pretty(0.4).input('in').humanize(), '0.4in')
+})
+test('input: humanize zero', function (t) {
+  t.is(pretty(0).input('in').humanize(), '0in')
+})
