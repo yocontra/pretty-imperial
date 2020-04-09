@@ -13,9 +13,6 @@ $ npm install pretty-imperial
 
 const prettyImperial = require('pretty-imperial')
 
-prettyImperial(1500).yd()
-// => 300yd
-
 prettyImperial(15000).humanize()
 // => 2.84mi
 
@@ -30,15 +27,12 @@ prettyImperial(120).input('in').humanize()
 
 ## Functions
 
-#### .mi(), .yd(), .ft(), .in()
+#### .mi(), .ft(), .in()
 > Converts the input measurement to the corresponding output
 
 Default input measurement type is `foot`. It can be changed with `.input()`
 
 ```js
-prettyImperial(1500).yd()
-// => 300yd
-
 prettyImperial(1).in()
 // => 0.12ft
 ```
@@ -48,7 +42,7 @@ prettyImperial(1).in()
 
 ```js
 prettyImperial(120).humanize()
-// => 30yd
+// => 120ft
 
 ```
 
@@ -58,8 +52,8 @@ prettyImperial(120).humanize()
 This can be chained with `humanize()`
 
 ```js
-prettyImperial(1500).input('in').yd()
-// => 41.66668yd
+prettyImperial(1500).input('in').ft()
+// => 125ft
 
 ```
 
@@ -67,7 +61,6 @@ prettyImperial(1500).input('in').yd()
 
 ```
 mi: mile  - 5280ft
-yd: yard - 3ft
 ft: foot - 12in
 in: inch - 1/12ft
 
