@@ -1,16 +1,8 @@
 var test = require('ava')
 var pretty = require('..')
 
-test('humanize feet to yards', function (t) {
-  t.is(pretty(1500).humanize(), '500yd')
-})
-
 test('humanize feet to mile', function (t) {
   t.is(pretty(15000).humanize(), '2.84mi')
-})
-
-test('humanize yards to yd', function (t) {
-  t.is(pretty(15).humanize(), '5yd')
 })
 
 test('humanize feet to ft', function (t) {

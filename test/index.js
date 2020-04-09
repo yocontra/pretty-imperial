@@ -4,10 +4,6 @@ test('default 1 foot to ft', function (t) {
   t.is(pretty().ft(), '1ft')
 })
 
-test('foot to yard', function (t) {
-  t.is(pretty(90).yd(), '30yd')
-})
-
 test('inch to ft', function (t) {
   t.is(pretty(1).input('in').ft(), '0.08333336ft')
 })
@@ -25,8 +21,4 @@ test('feet to inch', function (t) {
 
 test('input: in to mi', function (t) {
   t.is(pretty(1500).input('in').mi(), '0.02367425757576mi')
-})
-
-test.skip('input: in to yard', function (t) {
-  t.is(pretty(1500).input('in').yd(), '46.66668yd')
 })
