@@ -20,10 +20,10 @@ function isValidConversion (fromCategoryType, toCategoryType) {
     var errorSnippet =
       fromCategoryType === 'area'
         ? 'an area measurement to a length measurement'
-        : 'a length measurement to an area measurement';
+        : 'a length measurement to an area measurement'
     throw new Error(
       `Invalid conversion. You are trying to convert ${errorSnippet}.`
-    );
+    )
   }
 }
 
@@ -34,7 +34,7 @@ var modifiers = {
   ft2: 1,
   in: 12,
   in2: 144,
-};
+}
 
 var types = {
   mi: { value: 5280, category: 'length' },
@@ -43,7 +43,7 @@ var types = {
   ft2: { value: 1, category: 'area' },
   in: { value: 0.08333336, category: 'length' },
   in2: { value: 0.00694444, category: 'area' },
-};
+}
 
 function Pretty (value) {
   if (!(this instanceof Pretty)) {
@@ -62,49 +62,49 @@ Pretty.prototype.input = function (type) {
 }
 
 Pretty.prototype.mi = function () {
-  isValidConversion(this.type.category, 'length');
-  return prettify(this.value * this.type.value * modifiers.mi, this.prettify) + 'mi';
-};
+  isValidConversion(this.type.category, 'length')
+  return prettify(this.value * this.type.value * modifiers.mi, this.prettify) + 'mi'
+}
 
 Pretty.prototype.mi2 = function () {
-  isValidConversion(this.type.category, 'area');
-  return prettify(this.value * this.type.value * modifiers.mi2, this.prettify) + 'mi2';
-};
+  isValidConversion(this.type.category, 'area')
+  return prettify(this.value * this.type.value * modifiers.mi2, this.prettify) + 'mi2'
+}
 
 Pretty.prototype.ft = function () {
-  isValidConversion(this.type.category, 'length');
-  return prettify(this.value * this.type.value * modifiers.ft, this.prettify) + 'ft';
-};
+  isValidConversion(this.type.category, 'length')
+  return prettify(this.value * this.type.value * modifiers.ft, this.prettify) + 'ft'
+}
 
 Pretty.prototype.ft2 = function () {
-  isValidConversion(this.type.category, 'area');
-  return prettify(this.value * this.type.value * modifiers.ft2, this.prettify) + 'ft2';
-};
+  isValidConversion(this.type.category, 'area')
+  return prettify(this.value * this.type.value * modifiers.ft2, this.prettify) + 'ft2'
+}
 
 Pretty.prototype.in = function () {
-  isValidConversion(this.type.category, 'length');
-  return prettify(this.value * this.type.value * modifiers.in, this.prettify) + 'in';
-};
+  isValidConversion(this.type.category, 'length')
+  return prettify(this.value * this.type.value * modifiers.in, this.prettify) + 'in'
+}
 
 Pretty.prototype.in2 = function () {
-  isValidConversion(this.type.category, 'area');
-  return prettify(this.value * this.type.value * modifiers.in2, this.prettify) + 'in2';
-};
+  isValidConversion(this.type.category, 'area')
+  return prettify(this.value * this.type.value * modifiers.in2, this.prettify) + 'in2'
+}
 
 Pretty.prototype.humanize = function () {
-  var value = this.type.value * this.value;
-  var category = this.type.category;
-  this.prettify = true;
+  var value = this.type.value * this.value
+  var category = this.type.category
+  this.prettify = true
 
   if (category === 'area') {
-    if (value >= 27880000) return this.mi2();
+    if (value >= 27880000) return this.mi2()
     // necessary hack because of in2 to 1 ft2 conversion coming in just under 1
-    if (value >= 0.999) return this.ft2();
-    return this.in2();
+    if (value >= 0.999) return this.ft2()
+    return this.in2()
   }
-  if (value >= 5280) return this.mi();
-  if (value >= 1) return this.ft();
-  return this.in();
-};
+  if (value >= 5280) return this.mi()
+  if (value >= 1) return this.ft()
+  return this.in()
+}
 
 module.exports = Pretty
