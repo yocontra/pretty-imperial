@@ -37,30 +37,12 @@ var modifiers = {
 };
 
 var types = {
-  mi: {
-    value: 5280,
-    category: 'length',
-  },
-  mi2: {
-    value: 27880000,
-    category: 'area',
-  },
-  ft: {
-    value: 1,
-    category: 'length',
-  },
-  ft2: {
-    value: 1,
-    category: 'area',
-  },
-  in: {
-    value: 0.08333336,
-    category: 'length',
-  },
-  in2: {
-    value: 0.00694444,
-    category: 'area',
-  },
+  mi: { value: 5280, category: 'length' },
+  mi2: { value: 27880000, category: 'area' },
+  ft: { value: 1, category: 'length' },
+  ft2: { value: 1, category: 'area' },
+  in: { value: 0.08333336, category: 'length' },
+  in2: { value: 0.00694444, category: 'area' },
 };
 
 function Pretty (value) {
