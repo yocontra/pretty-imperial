@@ -38,32 +38,26 @@ var modifiers = {
 
 var types = {
   mi: {
-    name: 'mi',
     value: 5280,
     category: 'length',
   },
   mi2: {
-    name: 'mi2',
     value: 27880000,
     category: 'area',
   },
   ft: {
-    name: 'ft',
     value: 1,
     category: 'length',
   },
   ft2: {
-    name: 'ft2',
     value: 1,
     category: 'area',
   },
   in: {
-    name: 'in',
     value: 0.08333336,
     category: 'length',
   },
   in2: {
-    name: 'in2',
     value: 0.00694444,
     category: 'area',
   },
