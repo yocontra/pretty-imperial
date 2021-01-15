@@ -87,47 +87,32 @@ Pretty.prototype.input = function (type) {
 
 Pretty.prototype.mi = function () {
   isValidConversion(this.type.category, 'length');
-  return (
-    prettify(this.value * this.type.value * modifiers.mi, this.prettify) + 'mi'
-  );
+  return prettify(this.value * this.type.value * modifiers.mi, this.prettify) + 'mi';
 };
 
 Pretty.prototype.mi2 = function () {
   isValidConversion(this.type.category, 'area');
-  return (
-    prettify(this.value * this.type.value * modifiers.mi2, this.prettify) +
-    'mi2'
-  );
+  return prettify(this.value * this.type.value * modifiers.mi2, this.prettify) + 'mi2';
 };
 
 Pretty.prototype.ft = function () {
   isValidConversion(this.type.category, 'length');
-  return (
-    prettify(this.value * this.type.value * modifiers.ft, this.prettify) + 'ft'
-  );
+  return prettify(this.value * this.type.value * modifiers.ft, this.prettify) + 'ft';
 };
 
 Pretty.prototype.ft2 = function () {
   isValidConversion(this.type.category, 'area');
-  return (
-    prettify(this.value * this.type.value * modifiers.ft2, this.prettify) +
-    'ft2'
-  );
+  return prettify(this.value * this.type.value * modifiers.ft2, this.prettify) + 'ft2';
 };
 
 Pretty.prototype.in = function () {
   isValidConversion(this.type.category, 'length');
-  return (
-    prettify(this.value * this.type.value * modifiers.in, this.prettify) + 'in'
-  );
+  return prettify(this.value * this.type.value * modifiers.in, this.prettify) + 'in';
 };
 
 Pretty.prototype.in2 = function () {
   isValidConversion(this.type.category, 'area');
-  return (
-    prettify(this.value * this.type.value * modifiers.in2, this.prettify) +
-    'in2'
-  );
+  return prettify(this.value * this.type.value * modifiers.in2, this.prettify) + 'in2';
 };
 
 Pretty.prototype.humanize = function () {
@@ -137,7 +122,7 @@ Pretty.prototype.humanize = function () {
 
   if (category === 'area') {
     if (value >= 27880000) return this.mi2();
-    // necessary hack because of in2 to ft2 conversion coming in just under 1
+    // necessary hack because of in2 to 1 ft2 conversion coming in just under 1
     if (value >= 0.999) return this.ft2();
     return this.in2();
   }
