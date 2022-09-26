@@ -1,6 +1,6 @@
 {
   "name": "pretty-imperial",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Parse, convert, and humanize imperial sizes",
   "main": "index.js",
   "scripts": {
